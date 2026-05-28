@@ -8,16 +8,16 @@ def add(x, y):
 def subtract(x, y):
     return x - y
 
-
 # This function multiplies two numbers
 def multiply(x, y):
-    print x*y
+    print(x * y) 
     return x * y
 
-#Need to define divide function.
-def divide (x,y):
-    print x/y
-    return x/y
+# Need to define divide function.
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
 
 print("Calculator started.")
 
@@ -27,10 +27,9 @@ print("2.Subtract")
 print("3.Multiply")
 print("4.Divide") 
 
-
 while True:
-    # take input from the user
-    choice = input("Enter choice(1/2/3): ")
+    # 🛑 수정 포인트 1: 안내 문구에 '4'를 추가했습니다.
+    choice = input("Enter choice(1/2/3/4): ")
 
     # check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
@@ -46,9 +45,8 @@ while True:
         elif choice == '3':
             print(num1, "*", num2, "=", multiply(num1, num2))
             
-        elif choice =='4':
-            print(num1, "/", num2, "=", divide(num1,num2))
-            
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
 
         # check if user wants another calculation
         # break the while loop if answer is no
